@@ -10,7 +10,7 @@ public class Methods {
 
     static Random random = new Random();
 
-    public static void typeChangeSI() {
+    private static void typeChangeSI() {
         //Converting the string received from the user to Integer
         //String->Integer
 
@@ -235,14 +235,14 @@ public class Methods {
         //I am giving null because I will not be connected to any frame.
     }
 
-    public static void randomDizi(int line, int column) {
+    public static void randomArray(int line, int column) {
 
-        int[][] rDizi = new int[line][column];
+        int[][] rArr = new int[line][column];
 
-        for (int i = 0; i < rDizi.length; i++) {
-            for (int j = 0; j < rDizi[0].length; j++) {
-                rDizi[i][j] = random.nextInt(10);//0-9
-                System.out.print(rDizi[i][j] + " ");
+        for (int i = 0; i < rArr.length; i++) {
+            for (int j = 0; j < rArr[0].length; j++) {
+                rArr[i][j] = random.nextInt(10);//0-9
+                System.out.print(rArr[i][j] + " ");
             }
             System.out.println();
         }
@@ -295,5 +295,50 @@ public class Methods {
         // VolumeofThePrism:lenght*width*height
         // To use the return value, we must assign it to a double value.
         return lenght * width * height;
+    }
+    public static void remainingVolume(){
+        // todo QUE:A sphere is placed inside the rectangular prism. What is the remaining volume?
+         double sphere=volumeofSphere(3);
+         double Prizm=volumeofThePrism(4,5,6);
+         if (Prizm>sphere){
+             double reVolume=Prizm-sphere;
+             System.out.println("Remaining Volume: "+reVolume);
+         }else System.out.println("The volume of the sphere cannot be greater than the volume of the prism.");
+    }
+
+    public static void bodyMassIndex(double weight,double height){
+        //Height must be in cm format(Exp:1.80)
+
+        double Index=weight/(height*height);
+        System.out.println("your body mass index: "+Index);
+
+        if (0<Index&&Index<18.4){
+            System.out.println("you are weak.");
+        }else if (18.5<Index&& Index<24.9){
+            System.out.println("your weight is normal.");
+        }else if (25<Index&&Index<29.9){
+            System.out.println("you are overweight.");
+        }else if (30<Index && Index<34.9){
+            System.out.println("fat(1st degree obese).");
+        }else if (35<Index &&Index<44.9){
+            System.out.println("fat(2nd degree obese).");
+        }else System.out.println("so fat it's dangerous!");
+
+    }
+
+    public static boolean checkPerfectNumber(int number) {
+        //the number is not a perfect number
+        int total = 0;  //we have assigned 0 as default
+        boolean isItPerfect= false; // status control,the boolean default value is false, it should not affect
+        for (int i = 1; i < number; i++) {//i!=number because you need divisors except for yourself
+            if (number % i == 0) {
+                total +=i; // total=total+i;
+            }
+        }
+        if (total == number) {
+            isItPerfect = true;
+        }
+
+        return isItPerfect;
     }
 }
