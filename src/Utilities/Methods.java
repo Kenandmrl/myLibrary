@@ -327,7 +327,7 @@ public class Methods {
     }
 
     public static boolean checkPerfectNumber(int number) {
-        //the number is not a perfect number
+        //use run Methods in the comment lines
         int total = 0;  //we have assigned 0 as default
         boolean isItPerfect= false; // status control,the boolean default value is false, it should not affect
         for (int i = 1; i < number; i++) {//i!=number because you need divisors except for yourself
