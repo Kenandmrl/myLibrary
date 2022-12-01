@@ -10,7 +10,7 @@ public class Methods {
 
     static Random random = new Random();
 
-    private static void typeChangeSI() {
+    public  static void typeChangeSI() {
         //Converting the string received from the user to Integer
         //String->Integer
 
